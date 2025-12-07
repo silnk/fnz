@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To My Beautiful Wife MAMA SARA & HERA</title>
+  <style>
+    /* ---------- page setup ---------- */
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background: radial-gradient(circle at center, #ffe6f0 0%, #ffc2e0 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* ---------- floating hearts ---------- */
+    .heart {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background: #ff3b8d;
+      transform: rotate(-45deg);
+      animation: float 12s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background: #ff3b8d;
+      border-radius: 50%;
+    }
+    .heart::before { top: -12px; left: 0; }
+    .heart::after  { left: 12px; top: 0; }
+
+    @keyframes float {
+      0%   { transform: translateY(110vh) rotate(-45deg) scale(1); opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(-45deg) scale(1.4); opacity: 0; }
+    }
+
+    /* ---------- glowing text ---------- */
+    .glow {
+      font-size: 4.5rem;
+      color: #fff;
+      text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #ff3b8d,
+        0 0 40px #ff3b8d;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50%     { transform: scale(1.08); }
+    }
+
+    /* ---------- roses ---------- */
+    .rose {
+      position: absolute;
+      bottom: -80px;
+      font-size: 70px;
+      animation: rise 10s linear infinite;
+    }
+    @keyframes rise {
+      0%   { bottom: -80px; opacity: 0; }
+      20%  { opacity: 1; }
+      90%  { opacity: 1; }
+      100% { bottom: 110vh; opacity: 0; }
+    }
+
+    /* ---------- card ---------- */
+    .card {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      opacity: 0;
+      animation: reveal 3s 1s forwards;
+    }
+    @keyframes reveal {
+      to { opacity: 1; }
+    }
+
+    .dates {
+      margin-top: 1.5rem;
+      font-size: 1.3rem;
+      color: #8b0a46;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- floating hearts -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      let h = document.createElement('div');
+      h.className = 'heart';
+      h.style.left = Math.random() * 100 + '%';
+      h.style.animationDelay = Math.random() * 12 + 's';
+      h.style.animationDuration = (10 + Math.random() * 8) + 's';
+      document.body.appendChild(h);
+    }
+  </script>
+
+  <!-- roses -->
+  <script>
+    for (let i = 0; i < 8; i++) {
+      let r = document.createElement('div');
+      r.className = 'rose';
+      r.innerHTML = '🌹';
+      r.style.left = Math.random() * 100 + '%';
+      r.style.animationDelay = Math.random() * 10 + 's';
+      r.style.animationDuration = (8 + Math.random() * 6) + 's';
+      document.body.appendChild(r);
+    }
+  </script>
+
+  <!-- greeting card -->
+  <div class="card">
+    <div class="glow">I Love You FNZ My Queen</div>
+    <p style="margin-top:1rem;font-size:1.5rem;color:#8b0a46;">
+      Forever the queen of my heart,<br>
+      the amazing mom of our two beautiful children.
+    </p>
+    <div class="dates">
+      4 Sep 2022 &nbsp;·&nbsp; 10 July 2023 &nbsp;·&nbsp; 13 Feb 2025
+    </div>
+  </div>
+</body>
+</html>
